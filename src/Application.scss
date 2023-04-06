@@ -1,0 +1,135 @@
+$main-color: #000;
+$secondary-color: #D22365;
+$text-color-main: #fff;
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  background-color: $main-color;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.close {
+  cursor: pointer;
+}
+
+// menu
+.menu {
+  margin-bottom: 15px;
+  background-color: $main-color;
+
+  .foot {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .iconify {
+    cursor: pointer;
+  }
+
+  svg {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 0 auto;
+  }
+
+  .menu-lines {
+    position: absolute;
+    margin-top: 6px;
+    z-index: 999;
+    width: 35px;
+    height: 35px;
+    margin-left: 40px;
+  }
+
+  .menu-lines span {
+    display: flex;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 10px;
+    background: $secondary-color;
+    border-radius: 3px;
+    transition: all ease .3s;
+  }
+
+  .menu-lines span:nth-child(2) {
+    width: 26px
+  }
+
+  .menu-faketrigger {
+    position: absolute;
+    z-index: 1000;
+    width: 35px;
+    height: 35px;
+    opacity: 0;
+    cursor: pointer;
+    margin-left: 40px;
+    padding-top: 2rem;
+  }
+
+  .menu-faketrigger:checked~.menu-lines span {
+    background: #000;
+  }
+
+  .menu-faketrigger:checked~.menu-lines span:nth-child(2) {
+    width: 35px !important
+  }
+
+  .menu-faketrigger:checked~.menu-lines span:nth-child(1) {
+    transform-origin: 0% 0%;
+    transform: rotate(45deg) scaleX(1.25);
+  }
+
+  .menu-faketrigger:checked~.menu-lines span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-faketrigger:checked~.menu-lines span:nth-child(3) {
+    transform-origin: 0% 100%;
+    transform: rotate(-45deg) scaleX(1.25);
+  }
+
+  ul {
+    position: absolute;
+    margin-top: 0 !important;
+    z-index: 998;
+    left: 0;
+    top: 0;
+    width: 12rem;
+    padding-top: 100px;
+    height: calc(100vh - 100px);
+    margin-left: -300px;
+    transition: all ease .3s;
+  }
+
+
+  .menu-faketrigger:checked~ul {
+    margin-left: 0;
+    background: $secondary-color;
+  }
+
+  ul li {
+    display: flex;
+    align-items: center;
+    height: 35px;
+    font-size: 17px;
+    padding: 0.6rem 0rem;
+  }
+
+  ul li img {
+    width: 25px;
+    margin: 0 !important;
+  }
+
+  ul li a {
+    text-decoration: none;
+    margin-left: 10px;
+    color: #fff;
+
+    &:hover {
+      color: #888 !important;
+      transition: all ease .3s;
+    }
+  }
+}
