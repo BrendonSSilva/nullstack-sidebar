@@ -1,6 +1,5 @@
 $main-color: #000;
 $secondary-color: #D22365;
-$text-color-main: #fff;
 
 body {
   margin: 0;
@@ -18,20 +17,8 @@ body {
   margin-bottom: 15px;
   background-color: $main-color;
 
-  .foot {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-  }
-
   .iconify {
     cursor: pointer;
-  }
-
-  svg {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 0 auto;
   }
 
   .menu-lines {
@@ -103,7 +90,6 @@ body {
     transition: all ease .3s;
   }
 
-
   .menu-faketrigger:checked~ul {
     margin-left: 0;
     background: $secondary-color;
@@ -112,14 +98,12 @@ body {
   ul li {
     display: flex;
     align-items: center;
-    height: 35px;
     font-size: 17px;
-    padding: 0.6rem 0rem;
+    padding: 0.8rem 0rem;
   }
 
   ul li img {
     width: 25px;
-    margin: 0 !important;
   }
 
   ul li a {
@@ -128,8 +112,8 @@ body {
     color: #fff;
 
     &:hover {
-      color: #888 !important;
-      transition: all ease .3s;
+      color: #000 !important;
+      transition: all ease .2s;
     }
   }
 }
