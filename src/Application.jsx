@@ -1,18 +1,13 @@
 import Nullstack from 'nullstack'
-
 import './Application.scss'
 import Home from './Home'
 
 class Application extends Nullstack {
 
-  prepare({ page }) {
-    page.locale = 'en-US'
-  }
-
-  links = [
+  linksNav = [
     { name: 'Home', link: 'https://nullstack.app', icon: 'home' },
     { name: 'User', link: 'https://nullstack.app', icon: 'user' },
-    { name: 'Plus', link: 'https://nullstack.app', icon: 'squareplus' },
+    { name: 'Pluadsass', link: 'https://nullstack.app', icon: 'squareplus' },
     { name: 'Settings', link: 'https://nullstack.app', icon: 'settings' },
     { name: 'Cart', link: 'https://nullstack.app', icon: 'cart' },
     { name: 'Activity', link: 'https://nullstack.app', icon: 'activity' },
@@ -31,8 +26,8 @@ class Application extends Nullstack {
           <span></span>
         </div>
         <ul>
-          {this.links.map(item => (
-            <li><img src={item.icon && `/${item.icon}.svg`} /><a href={item.link}>{item.name}</a></li>
+          {this.linksNav.map(item => (
+            <li><img src={`/${item.icon}.svg`} /><a href={item.link}>{item.name}</a></li>
           ))}
         </ul>
       </nav>
@@ -43,7 +38,7 @@ class Application extends Nullstack {
     return (
       <body>
         <Sidebar />
-        <Home route="/" greeting="Welcome to Nullstack!" />
+        <Home route="/"/>
       </body>
     )
   }
